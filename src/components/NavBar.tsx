@@ -2,6 +2,8 @@ import { Flex, HStack, Image, Input, InputGroup, InputLeftElement, Switch, useCo
 import logo from '../assets/Logo/logo.webp';
 import ColorModeSwitch from "./ColorModeSwitch";
 import { SearchInput } from './SearchInput';
+
+
 const NavBar = () => {
   return (
     <HStack padding={3}>
