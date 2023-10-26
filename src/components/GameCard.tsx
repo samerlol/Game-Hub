@@ -10,15 +10,15 @@ interface Props {
 const GameCard = ({ game }: Props)=> {
     const platforms =game.parent_platforms.map(platform => platform.platform);
   return (
-    <Card >
+    <Card height={'md'}>
         <Image
         src={getCroppedImageUrl(game.background_image || '')}
         alt={game.name}
         objectFit={'cover'}
         borderRadius='lg'
-        height={'80%'}
+        height={'300px'}
         />
-        <CardBody>
+        <CardBody paddingBottom={0}>
             <Flex justifyContent={'space-between'}>
             <PlatformStack platforms={platforms} />
             <CriticScore score={game.metacritic}/>

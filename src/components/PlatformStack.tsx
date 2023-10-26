@@ -22,7 +22,7 @@ const PlatformStack = ({platforms}: Props ) => {
     }
   return (
     <HStack spacing={3}>
-        {platforms.map(platform =><Icon as={icons[platform.slug]} fontSize={20} color='gray.500'/>)}
+        {platforms.map(platform =><Icon key={platform.id} as={icons[platform.slug]} fontSize={20} color='gray.500'/>)}
     </HStack>
   )
 }

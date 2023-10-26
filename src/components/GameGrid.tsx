@@ -17,7 +17,7 @@ const GameGrid = () => {
       md:2,
       lg:3,
       xl:4
-    }} spacing={1} padding={5} gap={10}>
+    }} spacing={0} padding={5} gap={5} >
       {isLoading && arr.map(game=><GameCardContainer key={game}><GameCardSkeleton  /></GameCardContainer>)}
       {data.map(game=><GameCardContainer key={game.id}><GameCard game={game} /></GameCardContainer>)}
     </SimpleGrid>
