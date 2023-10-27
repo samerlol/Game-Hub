@@ -9,17 +9,18 @@ import { IconType } from 'react-icons';
 interface Props {
     platforms: Platform[];
 }
+export const icons:{ [key: string]: IconType} = {
+  pc: AiFillWindows,
+  playstation: BsPlaystation,
+  xbox: BsXbox,
+  linux: DiLinux,
+  android: AiFillAndroid,
+  nintendo: BsNintendoSwitch,
+  mac: AiFillApple,
+}
 const PlatformStack = ({platforms}: Props ) => {
     // console.log({platforms});
-    const icons:{ [key: string]: IconType} = {
-        pc: AiFillWindows,
-        playstation: BsPlaystation,
-        xbox: BsXbox,
-        linux: DiLinux,
-        android: AiFillAndroid,
-        nintendo: BsNintendoSwitch,
-        mac: AiFillApple,
-    }
+
   return (
     <HStack spacing={3}>
         {platforms.map(platform =><Icon key={platform.id} as={icons[platform.slug]} fontSize={20} color='gray.500'/>)}
