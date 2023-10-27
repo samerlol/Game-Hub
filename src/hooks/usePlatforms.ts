@@ -1,4 +1,4 @@
-import useData from "./useData";
+import platforms from "../data/platforms";
 
 export interface Platform {
     id: string | number;
@@ -7,6 +7,6 @@ export interface Platform {
     platforms: Platform[];
 }
 
-const usePlatforms = ()=> useData<Platform>('/platforms/lists/parents');
+const usePlatforms = ()=> ({isLoading: false, error: false, data: platforms});
 
 export default usePlatforms;

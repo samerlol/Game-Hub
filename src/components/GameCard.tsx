@@ -27,7 +27,7 @@ const GameCard = ({ game }: Props)=> {
         </CardBody>
         <CardFooter>
             <Stack mt='6' spacing='3'>
-                <Heading size='lg' fontSize={24}>{game.name} <Emoji rating={game.rating_top}/></Heading>
+                <Heading size='lg' fontSize={24}>{game.name} <Emoji rating={game.rating_top} /></Heading>
             </Stack>
         </CardFooter>
     </Card>
