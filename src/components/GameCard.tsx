@@ -12,7 +12,7 @@ const GameCard = ({ game }: Props)=> {
   return (
     <Card height={'md'}>
         <Image
-        src={getCroppedImageUrl(game.background_image || '')}
+        src={getCroppedImageUrl(game.background_image)}
         alt={game.name}
         objectFit={'cover'}
         borderRadius='lg'
