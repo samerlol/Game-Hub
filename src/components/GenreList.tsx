@@ -1,4 +1,4 @@
-import { HStack, List, ListItem, Image, Text, Spinner, Button, Flex } from '@chakra-ui/react';
+import { HStack, List, ListItem, Image, Text, Spinner, Button, Flex, Heading } from '@chakra-ui/react';
 import useGenres, { Genre } from '../hooks/useGenres'
 import getCroppedImageUrl from '../services/image-url';
 import { Platform } from '../hooks/usePlatforms';
@@ -14,14 +14,24 @@ const GenreList = ({ gameQuery, setGameQuery }: Props) => {
   if(isLoading)
         return <Spinner />
     return (
+        <>
+        <Heading as={'h4'} fontSize={'2xl'} marginBottom={3}>Genres</Heading>
         <List>
         {data.map(genre => <ListItem key={genre.id} paddingY={genre.id === gameQuery.genre?.id? 4:1}>
             <HStack>
-                <Image src={getCroppedImageUrl(genre.image_background)} boxSize={'32px'} borderRadius={10} alt='img'/>
-                <Button fontWeight={genre.id === gameQuery.genre?.id?'bold': 'normal'} fontSize='lg' variant={'link'} whiteSpace={'normal'} onClick={()=>setGameQuery({...gameQuery, genre})}>{genre.name}</Button>
+                <Image src={getCroppedImageUrl(genre.image_background)} 
+                  boxSize={'32px'} 
+                  borderRadius={10} 
+                  alt='img' 
+                  objectFit={'cover'}/>
+                <Button textAlign={'left'} 
+                  fontWeight={genre.id === gameQuery.genre?.id?'bold': 'normal'} 
+                  fontSize='lg' variant={'link'} whiteSpace={'normal'} 
+                  onClick={()=>setGameQuery({...gameQuery, genre})}>{genre.name}</Button>
             </HStack>
             </ListItem>)}
-    </List>
+        </List>
+        </>
   )
 }
 
