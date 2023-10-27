@@ -1,12 +1,13 @@
-import { HStack, List, ListItem, Image, Text, Spinner, Button, Flex, Heading } from '@chakra-ui/react';
-import useGenres, { Genre } from '../hooks/useGenres'
+import { HStack, List, ListItem, Image, Spinner, Button, Heading } from '@chakra-ui/react';
+import useGenres from '../hooks/useGenres'
 import getCroppedImageUrl from '../services/image-url';
-import { Platform } from '../hooks/usePlatforms';
 import { GameQuery } from '../App';
+
 interface Props{
   setGameQuery: (gameQuery: GameQuery)=> void;
   gameQuery: GameQuery
 }
+
 const GenreList = ({ gameQuery, setGameQuery }: Props) => {
   const { data, isLoading, error} = useGenres();
   if(error)
