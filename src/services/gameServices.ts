@@ -5,7 +5,7 @@ import apiClient from "./api-client";
 
 interface GameParams{
     genres: string | number | undefined;
-    platforms: string | number | undefined,
+    parent_platforms: string | number | undefined,
     ordering: string | null,
     search: string | undefined,
 }
