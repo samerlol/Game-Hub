@@ -1,5 +1,7 @@
 import { Game } from "../hooks/useGames";
-import apiClient, { FetchResponse } from "./api-client";
+import APIClient, { FetchResponse } from "./api-client";
+
+const apiClient = new APIClient<Game>('/games');
 
 interface GameParams{
     genres: string | number | undefined;
@@ -8,6 +10,7 @@ interface GameParams{
     search: string | undefined,
 }
 
-const gameServices = (gameParams: GameParams)=> apiClient.get<FetchResponse<Game>>('/games', {params:{...gameParams}}).then(res=> res.data);
+// const gameServices = (gameParams: GameParams)=> apiClient.get<FetchResponse<Game>>('/games', {params:{...gameParams}}).then(res=> res.data);
+const gameServices = (gameParams: GameParams)=> apiClient.getAll({params:{...gameParams}}).then(res=> res.data);
 
 export default gameServices;

@@ -5,7 +5,7 @@ import genreServices from "../services/genreServices";
 const useGenres = ()=>{
     return useQuery({
         queryKey: ['genres'],
-        queryFn: ()=> genreServices,
+        queryFn: genreServices.getAll,
         staleTime: 24 * 60 * 60 * 1000, //24 hours
         initialData: {count: genres.length, results: genres},
     })
