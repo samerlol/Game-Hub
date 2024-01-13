@@ -1,7 +1,5 @@
-import { FetchResponse } from "../hooks/useData";
 import { Game } from "../hooks/useGames";
-import apiClient from "./api-client";
-// import { GameQuery } from "../App";
+import apiClient, { FetchResponse } from "./api-client";
 
 interface GameParams{
     genres: string | number | undefined;

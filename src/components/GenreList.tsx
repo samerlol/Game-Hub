@@ -1,7 +1,7 @@
-import { HStack, List, ListItem, Image, Spinner, Button, Heading } from '@chakra-ui/react';
-import useGenres from '../hooks/useGenres'
-import getCroppedImageUrl from '../services/image-url';
+import { Button, HStack, Heading, Image, List, ListItem, Spinner } from '@chakra-ui/react';
 import { GameQuery } from '../App';
+import useGenres from '../hooks/useGenres';
+import getCroppedImageUrl from '../services/image-url';
 
 interface Props{
   setGameQuery: (gameQuery: GameQuery)=> void;

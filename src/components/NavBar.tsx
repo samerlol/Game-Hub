@@ -1,8 +1,8 @@
-import { Flex, HStack, Image, Input, InputGroup, InputLeftElement, Switch, useColorMode } from "@chakra-ui/react"
+import { HStack, Image } from "@chakra-ui/react";
+import { GameQuery } from "../App";
 import logo from '../assets/Logo/logo.webp';
 import ColorModeSwitch from "./ColorModeSwitch";
 import { SearchInput } from './SearchInput';
-import { GameQuery } from "../App";
 
 interface Props{
   gameQuery: GameQuery;

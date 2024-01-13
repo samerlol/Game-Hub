@@ -1,14 +1,14 @@
-import meh from '../assets/Emojis/meh.webp';
-import bullEye from '../assets/Emojis/bulls-eye.webp';
-import thumpsUp from '../assets/Emojis/thumbs-up.webp';
 import { Image, ImageProps } from '@chakra-ui/react';
+import bullEye from '../assets/Emojis/bulls-eye.webp';
+import meh from '../assets/Emojis/meh.webp';
+import thumpsUp from '../assets/Emojis/thumbs-up.webp';
 
 interface Props{
     rating: number;
 }
 const Emoji = ({rating}: Props) => {
 
-    if(rating < 3) return;
+    // if(rating < 3) return;
 
     const emojiMap: {[key: number]: ImageProps} = {
         3: { src: meh, alt: 'meh', boxSize:'25px'},
