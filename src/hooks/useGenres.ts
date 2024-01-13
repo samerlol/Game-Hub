@@ -1,12 +1,14 @@
+import { useQuery } from "@tanstack/react-query";
 import genres from "../data/genres";
+import genreServices from "../services/genreServices";
 
-export interface Genre {
-    id: number;
-    name: string;
-    slug: string;
-    image_background: string;
+const useGenres = ()=>{
+    return useQuery({
+        queryKey: ['genres'],
+        queryFn: ()=> genreServices,
+        staleTime: 24 * 60 * 60 * 1000, //24 hours
+        initialData: {count: genres.length, results: genres},
+    })
 }
-
-const useGenres = () => ({isLoading: false, error: false, data: genres});
 
 export default useGenres;

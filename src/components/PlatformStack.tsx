@@ -1,4 +1,4 @@
-import { Platform } from '../hooks/usePlatforms'
+import { Platform } from '../services/platformServices';
 import {AiFillWindows, AiFillAndroid, AiFillApple} from 'react-icons/ai';
 import {DiLinux} from 'react-icons/di';
 import { BsXbox, BsNintendoSwitch, BsPlaystation} from 'react-icons/bs';

@@ -9,11 +9,11 @@ interface Props{
 
 }
 const GameGrid = ({ gameQuery }: Props) => {
-   const { data, isLoading, error}= useGames(gameQuery);
+   const { data: games, isLoading, error}= useGames(gameQuery);
     const arr = [1,2,3,4,5,6,7,8];
 
     if(error)
-        return <Text>{error}</Text>;
+        return <Text>{error.message}</Text>;
 
    return (
     <SimpleGrid columns={{
@@ -23,7 +23,7 @@ const GameGrid = ({ gameQuery }: Props) => {
       xl:4
     }} spacing={0} padding={5} gap={5} >
       {isLoading && arr.map(game=><GameCardContainer key={game}><GameCardSkeleton  /></GameCardContainer>)}
-      {data.map(game=><GameCardContainer key={game.id}><GameCard game={game} /></GameCardContainer>)}
+      {games?.results?.map(game=><GameCardContainer key={game.id}><GameCard game={game} /></GameCardContainer>)}
     </SimpleGrid>
    );
 }
