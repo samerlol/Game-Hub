@@ -8,12 +8,10 @@ import GenreList from './components/GenreList';
 import NavBar from './components/NavBar';
 import PlatformSelector from './components/PlatformSelector';
 import SortSelector from './components/SortSelector';
-import { Genre } from './services/genreServices';
-import { Platform } from './services/platformServices';
 
 export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
+  genreId?: number;
+  platformId?: number;
   ordering: string | null;
   search: string | undefined;
 }

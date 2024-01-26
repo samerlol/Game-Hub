@@ -18,7 +18,7 @@ const GenreList = ({ gameQuery, setGameQuery }: Props) => {
         <>
         <Heading as={'h4'} fontSize={'2xl'} marginBottom={3}>Genres</Heading>
         <List>
-        {data?.results.map(genre => <ListItem key={genre.id} paddingY={genre.id === gameQuery.genre?.id? 4:1}>
+        {data?.results.map(genre => <ListItem key={genre.id} paddingY={genre.id === gameQuery.genreId? 4:1}>
             <HStack>
                 <Image src={getCroppedImageUrl(genre.image_background)} 
                   boxSize={'32px'} 
@@ -26,9 +26,9 @@ const GenreList = ({ gameQuery, setGameQuery }: Props) => {
                   alt='img' 
                   objectFit={'cover'}/>
                 <Button textAlign={'left'} 
-                  fontWeight={genre.id === gameQuery.genre?.id?'bold': 'normal'} 
+                  fontWeight={genre.id === gameQuery.genreId?'bold': 'normal'} 
                   fontSize='lg' variant={'link'} whiteSpace={'normal'} 
-                  onClick={()=>setGameQuery({...gameQuery, genre})}>{genre.name}</Button>
+                  onClick={()=>setGameQuery({...gameQuery, genreId: genre.id})}>{genre.name}</Button>
             </HStack>
             </ListItem>)}
         </List>

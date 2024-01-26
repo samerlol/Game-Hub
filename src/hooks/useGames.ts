@@ -3,7 +3,6 @@ import { GameQuery } from "../App";
 import { FetchResponse } from "../services/api-client";
 import { Platform } from "../services/platformServices";
 import APIClient from "../services/api-client";
-import { AxiosRequestConfig } from "axios";
 import { Genre } from "../services/genreServices";
 
 // export interface Game {
@@ -38,8 +37,8 @@ const useGames = (gameQuery: GameQuery) =>
     queryFn: ({ pageParam = 1 }) =>
       apiClient.getAll({
         params: {
-          genres: gameQuery.genre?.id,
-          parent_platforms: gameQuery.platform?.id,
+          genres: gameQuery.genreId,
+          parent_platforms: gameQuery.platformId,
           ordering: gameQuery.ordering,
           search: gameQuery.search,
           page: pageParam
@@ -48,7 +47,8 @@ const useGames = (gameQuery: GameQuery) =>
     getNextPageParam: (lastPage, allPages) => {
       return lastPage.next ? allPages.length + 1 : undefined;
     },
-    staleTime: 24 * 60 * 60 * 1000 // 24 hours
+    staleTime: 24 * 60 * 60 * 1000, // 24 hours
+    initialPageParam: 1, // Provide the initial page parameter here
   });
 
 export default useGames;
