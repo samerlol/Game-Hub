@@ -6,7 +6,7 @@ import useGame from '../hooks/useGame';
 export const GameDetailsPage = () => {
   const { slug } = useParams();
 
-  if(!slug) return;
+  if(!slug) return null;
   
   const { data: game, isLoading, error} = useGame(slug);
 
@@ -14,7 +14,7 @@ export const GameDetailsPage = () => {
     <Spinner/>
 
   if(error || !game)
-    return;  
+    return null;  
   return (
     <>
       <Heading>{game.name}</Heading>

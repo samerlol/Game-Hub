@@ -1,5 +1,5 @@
-import { Game } from "../hooks/useGames";
-import APIClient, { FetchResponse } from "./api-client";
+import { Game } from "../entities/Game";
+import APIClient from "./api-client";
 
 const apiClient = new APIClient<Game>('/games');
 
