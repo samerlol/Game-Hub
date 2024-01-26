@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
 import genres from "../data/genres";
-import genreServices from "../services/genreServices";
+import genreServices, { Genre } from "../services/genreServices";
+import { FetchResponse } from "../services/api-client";
 
 const useGenres = ()=>{
-    return useQuery({
+    return useQuery<FetchResponse<Genre>, Error, FetchResponse<Genre>>({
         queryKey: ['genres'],
         queryFn: genreServices.getAll,
         staleTime: ms('24h'),
