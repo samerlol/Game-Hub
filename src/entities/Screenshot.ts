@@ -1,6 +1,6 @@
 
 
-export interface Screenshot {
+export default interface Screenshot {
     "image": string;
     "hidden": boolean;
 }
